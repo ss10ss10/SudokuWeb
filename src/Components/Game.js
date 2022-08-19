@@ -20,22 +20,25 @@ const Game = (props) => {
                   [3, 2, 5, 7, 8, 9, 1, 4, 6], [6, 4, 1, 2, 5, 3, 8, 7, 9], [7, 8, 9, 6, 4, 1, 5, 3, 2]];
 
     
+    let final;
     if (props.game === 1) {
-        props.updateGame(game1);
+        final = game1;
     } else if (props.game === 2) {
-        props.updateGame(game2);
+        final = game2;
     } else if (props.game === 3) {
-        props.updateGame(game3);
+        final = game3;
     } else if (props.game === 4) {
-        props.updateGame(game4);
+        final = game4;
     } else if (props.game === 5) {
-        props.updateGame(game5);
+        final = game5;
     }
     else {
-        props.updateGame(Array.from(Array(9), () => new Array(9).fill(0)));
+        final = Array.from(Array(9), () => new Array(9).fill(0));
     }
     return (
-        <></>
+        <>
+            {props.updateGame(final)}
+        </>
     );
 }
 
