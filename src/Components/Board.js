@@ -14,15 +14,18 @@ const Board = () => {
     // console.log(boardList);
     
     // Tried hook but couldn't get it to work
-    // const [boardList, setBoardList] = useState(Array.from(Array(9), () => new Array(9).fill(0)));
-    // <Game game={1} />;
-
+    const [boardList, setBoardList] = useState();
+    const updateGame = b => {
+        setBoardList(b);
+    }
+    console.log(boardList);
     // boardList[0][1] = 3;
     // boardList[0][4] = 7;
     // boardList[0][5] = 9;
     // boardList[0][6] = 1;
     return (
         <div id="table">
+            <Game updateGame={updateGame} game />;
             <Row {...boardList[0]}/>
             <Row {...boardList[1]}/>
             <Row {...boardList[2]}/> 
