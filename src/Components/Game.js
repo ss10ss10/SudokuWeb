@@ -21,19 +21,24 @@ const Game = (g) => {
 
     
     let final;
-    if (g === 1) {
-        final = game1;
-    } else if (g === 2) {
-        final = game2;
-    } else if (g === 3) {
-        final = game3;
-    } else if (g === 4) {
-        final = game4;
-    } else if (g === 5) {
-        final = game5;
-    }
-    else {
-        final = Array.from(Array(9), () => new Array(9).fill(0));
+    switch (g) {
+        case 1:
+            final = game1;
+            break;
+        case 2:
+            final = game2;
+            break;
+        case 3:
+            final = game3;
+            break;
+        case 4:
+            final = game4;
+            break;
+        case 5:
+            final = game5;
+            break;
+        default:
+            final = Array.from(Array(9), () => new Array(9).fill(0));
     }
     return (final);
 }
