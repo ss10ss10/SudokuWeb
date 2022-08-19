@@ -1,4 +1,5 @@
 # Sudoku Web
 ### Initial Grid
-![image](https://user-images.githubusercontent.com/64100540/185712933-c35cf340-c567-48fc-bdb9-8975462b8e4f.png)
+![image](https://user-images.githubusercontent.com/64100540/185715264-dde00c14-11ec-47ad-8ac9-663af71e2dc4.png)
+
 
