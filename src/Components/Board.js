@@ -25,7 +25,7 @@ const Board = () => {
     // boardList[0][6] = 1;
     return (
         <div id="table">
-            <Game updateGame={updateGame} game />;
+            <Game updateGame={updateGame} game={1} />;
             <Row {...boardList[0]}/>
             <Row {...boardList[1]}/>
             <Row {...boardList[2]}/> 
