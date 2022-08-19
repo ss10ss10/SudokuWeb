@@ -6,11 +6,31 @@
     display: table-row;
     padding: 5px;
 }
+
 .td {
     display: table-cell;
     padding: 5px;
     width: 80px;
     height: 80px;
     border: aliceblue solid 1px;
+    margin: 5px;
+}
+.tdd {
+    display: table-cell;
+    padding: 5px;
+    width: 80px;
+    height: 80px;
+    border: aliceblue solid 1px;
+    border-right: yellow solid 5px;
+    margin: 5px;
+}
+
+.trr {
+    display: table-cell;
+    padding: 5px;
+    width: 80px;
+    height: 80px;
+    border: aliceblue solid 1px;
+    border-bottom: aliceblue solid 5px;
     margin: 5px;
 }
