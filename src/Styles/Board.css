@@ -28,3 +28,10 @@
 .trr {
   border-bottom: yellow solid 5px;
 }
+
+.input[type="text"]
+{
+    background: rgba(0, 0, 0, 0);
+    border: none;
+    outline: none;
+}
