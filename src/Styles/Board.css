@@ -3,8 +3,8 @@
   padding: 5px;
 }
 .tr {
-  display: table-row;
-  padding: 5px;
+  display: table-row !important;
+  padding: 5px !important;
 }
 
 .td {
