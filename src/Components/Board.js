@@ -3,21 +3,18 @@ import Row from './Row';
 import Game from './Game';
 
 const Board = () => {
-    const boardList = {
-        l : Game(3),
-        c : 0,
-    }
+    const boardList = Game(3);
     return (
         <div id="table">
-            <Row {...boardList.l[0]}/>
-            <Row {...boardList.l[1]}/>
-            <Row {...boardList.l[2]} {...boardList.c}/> 
-            <Row {...boardList.l[3]}/>
-            <Row {...boardList.l[4]}/>
-            <Row {...boardList.l[5]} {...boardList.c}/>
-            <Row {...boardList.l[6]}/>
-            <Row {...boardList.l[7]}/>
-            <Row {...boardList.l[8]}/>
+            <Row {...boardList[0]}/>
+            <Row {...boardList[1]}/>
+            <Row {...boardList[2]}/> 
+            <Row {...boardList[3]}/>
+            <Row {...boardList[4]}/>
+            <Row {...boardList[5]}/>
+            <Row {...boardList[6]}/>
+            <Row {...boardList[7]}/>
+            <Row {...boardList[8]}/>
         </div>
     );
 }
