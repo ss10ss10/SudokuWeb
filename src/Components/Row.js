@@ -5,7 +5,7 @@ const Row = ({ updateGameBoard, array, cls, rowNo }) => {
     const [clss,setClss] = useState(["td ", "td ", "tdd ", "td ", "td ", "tdd ", "td ", "td ", "td "]);
     const val = useRef(0)
     const handleChange = (e, i) => {
-        updateGameBoard(rowNo, i, e);
+        updateGameBoard(rowNo, i, Number(e));
     }
         return (
             <div className="tr">
@@ -15,7 +15,7 @@ const Row = ({ updateGameBoard, array, cls, rowNo }) => {
                         className = { clss[i] + cls } 
                         onChange={(e) => handleChange(e.target.value, i)}
                     >
-                            <input className="input" value={item}></input>
+                            <input className="inp" value={item}></input>
                     </div>))}
             </div>
         );
