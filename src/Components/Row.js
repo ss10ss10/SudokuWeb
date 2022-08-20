@@ -15,7 +15,7 @@ const Row = ({ updateGameBoard, array, cls, rowNo }) => {
                         className = { clss[i] + cls } 
                         onChange={(e) => handleChange(e.target.value, i)}
                     >
-                            <input className="inp" value={item}></input>
+                            <input type="number" className="inp" value={item}></input>
                     </div>))}
             </div>
         );
