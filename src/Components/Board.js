@@ -12,7 +12,8 @@ const Board = () => {
         setGameBoard(newBoard);
     }
         return (
-            <div id="table">
+           <div className="box">
+             <div id="table">
                 {gameBoard?.map((item, i) => (
                     i === 2 || i === 5 ? <Row key={i} updateGameBoard={updateGameBoard} array={gameBoard[i]} cls="trr" rowNo = {i}>
                             {item}
@@ -20,8 +21,8 @@ const Board = () => {
                             {item}
                     </Row>
                 ))}
-                {console.log(gameBoard)}
             </div>
+           </div>
         );
 };
 export default Board;
