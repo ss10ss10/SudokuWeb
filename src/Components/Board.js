@@ -2,10 +2,14 @@ import "../Styles/Board.css";
 import Row from "./Row";
 import Game from "./Game";
 import { useState } from "react";
+import { useLocation } from "react-router";
 
 const Board = () => {
-    const boardList = Game(3);
-    let [gameBoard, setGameBoard] = useState(Game(3));
+    const location = useLocation();
+    const boardList = Game( location.state?.difficulty === undefined ? 1 : location.state.difficulty ); 
+
+    let [gameBoard, setGameBoard] = useState(boardList);
+
     const updateGameBoard = (row, col, value) => {
         let newBoard = [...gameBoard];
         newBoard[row][col] = value;
