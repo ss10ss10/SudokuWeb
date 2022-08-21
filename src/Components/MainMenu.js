@@ -8,7 +8,7 @@ const MainMenu = () => {
 
     const handleClick = (e) => {
         setIsShown('None');
-        navigate('/game', {state: { difficulty: e }});
+        navigate('/game', {state: { difficulty: e , no: Math.floor(Math.random() * 5) + 1}});
     }
     return (
         <div className="main-menu" style={{display: isShown}}>

@@ -1,18 +1,33 @@
 import "../Styles/Board.css";
 import Row from "./Row";
 import Game from "./Game";
+import DisplayBoard from "./DisplayBoard";
 import { useState } from "react";
 import { useLocation } from "react-router";
 
 const Board = () => {
-    const location = useLocation()
-    const boardList = Game( location.state?.difficulty  === undefined ? 1 : location.state.difficulty );
+    const location = useLocation();
+    const boardList = Game( location.state?.no  === undefined ? 1 : location.state.no );
+    let solved = false;
+    let count = 0;
 
-    let [gameBoard, setGameBoard] = useState(boardList);
+    let toSolveBoard = DisplayBoard(boardList, location.state.difficulty);
+    
+    let [gameBoard, setGameBoard] = useState(toSolveBoard);
     const updateGameBoard = (row, col, value) => {
         let newBoard = [...gameBoard];
         newBoard[row][col] = value;
+        if (value === boardList[row][col]) {
+            solved = true;
+        }else {
+            solved = false;
+        }
         setGameBoard(newBoard);
+        if (solved) {
+            count++;
+        }else {
+            count--;
+        }
     }
     return (
         <div className="box">
@@ -24,7 +39,6 @@ const Board = () => {
                         {item}
                 </Row>
             ))}
-            {console.log(gameBoard)}
         </div>
         </div>
     );
