@@ -5,11 +5,11 @@ import DisplayBoard from "./DisplayBoard";
 import { useState } from "react";
 import { useLocation } from "react-router";
 
+let count = 0;
 const Board = () => {
     const location = useLocation();
     const boardList = Game( location.state?.no  === undefined ? 1 : location.state.no );
     let solved = false;
-    let count = 0;
 
     let toSolveBoard = DisplayBoard(boardList, location.state.difficulty);
     
@@ -23,10 +23,15 @@ const Board = () => {
             solved = false;
         }
         setGameBoard(newBoard);
-        if (solved) {
+        if (solved === true) {
             count++;
         }else {
-            count--;
+            if (count > 1) {
+                count--;
+            }
+        }
+        if (count === 10){
+            alert("You Win");
         }
     }
     return (
