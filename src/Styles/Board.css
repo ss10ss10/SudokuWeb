@@ -1,7 +1,18 @@
+.box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  background-color: #282c34;
+}
+
 #table {
   display: table;
   padding: 5px;
+  background-color: #282c34;
 }
+
 .tr {
   display: table-row !important;
   padding: 5px !important;

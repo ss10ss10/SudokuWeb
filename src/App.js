@@ -1,14 +1,16 @@
-import logo from './logo.svg';
 import './App.css';
 import Board from './Components/Board';
+import { BrowserRouter, Routes, Route, Link} from 'react-router-dom';
+import MainMenu from './Components/MainMenu';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <Board />
-      </header>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route exact path='/' element={<MainMenu/>}/>
+        <Route path="/game" element={<Board/>}/>
+      </Routes>
+    </BrowserRouter>
   );
 }
 
