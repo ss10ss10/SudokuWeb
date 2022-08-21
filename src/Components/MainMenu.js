@@ -12,9 +12,9 @@ const MainMenu = () => {
     }
     return (
         <div className="main-menu" style={{display: isShown}}>
-            <button className="button" onClick={() => handleClick(1)}>Easy</button>
-            <button className="button" onClick={() => handleClick(2)}>Medium</button>
-            <button className="button" onClick={() => handleClick(3)}>Hard</button>
+            <button className="button" role="button" onClick={() => handleClick(1)}>Easy</button>
+            <button className="button" role="button" onClick={() => handleClick(2)}>Medium</button>
+            <button className="button" role="button" onClick={() => handleClick(3)}>Hard</button>
         </div>
     );
 }
