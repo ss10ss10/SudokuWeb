@@ -8,7 +8,7 @@ const MainMenu = () => {
 
     const handleClick = (e) => {
         setIsShown('None');
-        navigate('/game', { difficulty: e });
+        navigate('/game', {state: { difficulty: e }});
     }
     return (
         <div className="main-menu" style={{display: isShown}}>
