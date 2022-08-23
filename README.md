@@ -2,7 +2,7 @@
 ## Main Menu
 ![image](https://user-images.githubusercontent.com/64100540/185795173-4219031e-0357-49d2-ab1c-50f820538838.png)
 
-### Initial Grid
+## Initial Grid
 ![image](https://user-images.githubusercontent.com/64100540/185804972-56cdd3e9-146f-4fae-8125-65e4ac172aeb.png)
 
 
