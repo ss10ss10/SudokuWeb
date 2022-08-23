@@ -6,7 +6,7 @@
 ![image](https://user-images.githubusercontent.com/64100540/185804972-56cdd3e9-146f-4fae-8125-65e4ac172aeb.png)
 
 
-### Solved Grid
+## Solved Grid
 ![image](https://user-images.githubusercontent.com/64100540/185796392-40aed888-b13a-4f9e-9ba1-27a5f7b5c442.png)
 
 
