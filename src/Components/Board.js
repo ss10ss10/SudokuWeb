@@ -19,8 +19,8 @@ const Board = () => {
 
     let contained = (arr, item) => {
         let contains = false;
+        console.log("contained>>>",arr,item);
         for (let i = 0;  i < arr.length; i++){
-            
             if (arr[i][0] === item[0] && arr[i][1] === item[1]) {
                 contains = true;
                 console.log(arr[i]);
@@ -29,10 +29,9 @@ const Board = () => {
         }
         return contains;
     }
-    console.log(emptyList);
 
     const updateGameBoard = (row, col, value) => {
-        console.log(contained(emptyList, [row, col]))
+        // console.log(contained(emptyList, [row, col]))
         if (contained(emptyList, [row, col])) {
             let newBoard = [...gameBoard];
             newBoard[row][col] = value;
