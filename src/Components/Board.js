@@ -17,10 +17,10 @@ const Board = () => {
     
     let [gameBoard, setGameBoard] = useState(toSolveBoard);
 
-    const contains = (arr, item) => {
-        var item_as_string = JSON.stringify(item);
+    let contained = (arr, item) => {
+        let item_as_string = [JSON.stringify(item[0]), JSON.stringify(item[1])];
       
-        var contains = arr.some(function(ele){
+        let contains = arr.some(function(ele){
           return JSON.stringify(ele) === item_as_string;
         });
         return contains;
@@ -28,7 +28,8 @@ const Board = () => {
     console.log(emptyList);
 
     const updateGameBoard = (row, col, value) => {
-        if (contains(emptyList, [row, col])) {
+        console.log(contained(emptyList, [row, col]))
+        if (contained(emptyList, [row, col])) {
             let newBoard = [...gameBoard];
             newBoard[row][col] = value;
             if (value === boardList[row][col]) {
@@ -36,8 +37,6 @@ const Board = () => {
             }else {
                 solved = false;
             }
-
-
             setGameBoard(newBoard);
             if (solved === true) {
                 count++;
