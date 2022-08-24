@@ -1,4 +1,4 @@
-const DisplayBoard = (dispBoard, difficulty) => {
+const displayBoard = (dispBoard, difficulty) => {
     let final;
     let emptyList = []
     const removeRandom = (arr, n) => {
@@ -31,4 +31,4 @@ const DisplayBoard = (dispBoard, difficulty) => {
     return [final, emptyList];
 }
 
-export default DisplayBoard;
+export default displayBoard;

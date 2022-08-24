@@ -1,25 +1,28 @@
 import "../Styles/Board.css";
 import Row from "./Row";
 import Game from "./Game";
-import DisplayBoard from "./DisplayBoard";
+import displayBoard from "./displayBoard";
 import { useState } from "react";
 import { useLocation } from "react-router";
+import { useEffect } from "react";
 
 let count = 0;
 const Board = () => {
     const location = useLocation();
     const boardList = Game( location.state?.no  === undefined ? 1 : location.state.no );
     let solved = false;
-    
-    let temp = DisplayBoard(boardList, location.state.difficulty);
-    let toSolveBoard = temp[0];
-    let emptyList = temp[1];
-    
-    let [gameBoard, setGameBoard] = useState(toSolveBoard);
+    const [gameBoard, setGameBoard] = useState([]);
+    const [emptyList, setEmptyList] = useState([]);
+
+    useEffect(() => {
+        const temp = displayBoard(boardList, location.state.difficulty);
+        setGameBoard(temp[0]);
+        setEmptyList(temp[1]);
+    },[])
 
     let contained = (arr, item) => {
         let contains = false;
-        console.log("contained>>>",arr,item);
+        // console.log("contained>>>",arr,item);
         for (let i = 0;  i < arr.length; i++){
             if (arr[i][0] === item[0] && arr[i][1] === item[1]) {
                 contains = true;
@@ -32,6 +35,7 @@ const Board = () => {
 
     const updateGameBoard = (row, col, value) => {
         // console.log(contained(emptyList, [row, col]))
+        console.log(emptyList)
         if (contained(emptyList, [row, col])) {
             let newBoard = [...gameBoard];
             newBoard[row][col] = value;
