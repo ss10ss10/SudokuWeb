@@ -1,6 +1,6 @@
 const DisplayBoard = (dispBoard, difficulty) => {
     let final;
-
+    let emptyList = []
     const removeRandom = (arr, n) => {
         let count = 0;
         while (count < n) {
@@ -8,6 +8,7 @@ const DisplayBoard = (dispBoard, difficulty) => {
             let col = Math.floor(Math.random() * 9);
             if (arr[row][col] !== '') {
                 arr[row][col] = '';
+                emptyList.push([row, col]);
                 count++;
             }
         }
@@ -27,7 +28,7 @@ const DisplayBoard = (dispBoard, difficulty) => {
         default:
             final = removeRandom(dispBoard, difficulty * 10);
     }
-    return final
+    return [final, emptyList];
 }
 
 export default DisplayBoard;

@@ -10,28 +10,45 @@ const Board = () => {
     const location = useLocation();
     const boardList = Game( location.state?.no  === undefined ? 1 : location.state.no );
     let solved = false;
-
-    let toSolveBoard = DisplayBoard(boardList, location.state.difficulty);
+    
+    let temp = DisplayBoard(boardList, location.state.difficulty);
+    let toSolveBoard = temp[0];
+    let emptyList = temp[1];
     
     let [gameBoard, setGameBoard] = useState(toSolveBoard);
+
+    const contains = (arr, item) => {
+        var item_as_string = JSON.stringify(item);
+      
+        var contains = arr.some(function(ele){
+          return JSON.stringify(ele) === item_as_string;
+        });
+        return contains;
+    }
+    console.log(emptyList);
+
     const updateGameBoard = (row, col, value) => {
-        let newBoard = [...gameBoard];
-        newBoard[row][col] = value;
-        if (value === boardList[row][col]) {
-            solved = true;
-        }else {
-            solved = false;
-        }
-        setGameBoard(newBoard);
-        if (solved === true) {
-            count++;
-        }else {
-            if (count > 1) {
-                count--;
+        if (contains(emptyList, [row, col])) {
+            let newBoard = [...gameBoard];
+            newBoard[row][col] = value;
+            if (value === boardList[row][col]) {
+                solved = true;
+            }else {
+                solved = false;
             }
-        }
-        if (count === 10){
-            alert("You Win");
+
+
+            setGameBoard(newBoard);
+            if (solved === true) {
+                count++;
+            }else {
+                if (count > 1) {
+                    count--;
+                }
+            }
+            if (count === 10){
+                alert("You Win");
+            }
         }
     }
     return (
