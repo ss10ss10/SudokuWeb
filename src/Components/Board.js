@@ -18,11 +18,15 @@ const Board = () => {
     let [gameBoard, setGameBoard] = useState(toSolveBoard);
 
     let contained = (arr, item) => {
-        let item_as_string = [JSON.stringify(item[0]), JSON.stringify(item[1])];
-      
-        let contains = arr.some(function(ele){
-          return JSON.stringify(ele) === item_as_string;
-        });
+        let contains = false;
+        for (let i = 0;  i < arr.length; i++){
+            
+            if (arr[i][0] === item[0] && arr[i][1] === item[1]) {
+                contains = true;
+                console.log(arr[i]);
+                console.log("Item: ",item);
+            }
+        }
         return contains;
     }
     console.log(emptyList);
