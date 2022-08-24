@@ -2,6 +2,7 @@ import "../Styles/Board.css";
 import Row from "./Row";
 import Game from "./Game";
 import displayBoard from "./displayBoard";
+import win from "./winCheck";
 import { useState } from "react";
 import { useLocation } from "react-router";
 import { useEffect } from "react";
@@ -47,9 +48,9 @@ const Board = () => {
                     count--;
                 }
             }
-            if (count === 10){
-                alert("You Win");
-            }
+        }
+        if (win(gameBoard, boardList)) {
+            alert("You Win");
         }
     }
     return (
