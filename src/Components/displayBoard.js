@@ -2,6 +2,7 @@ const displayBoard = (dispBoard, difficulty) => {
     let final;
     let emptyList = []
     const removeRandom = (arr, n) => {
+        
         let count = 0;
         while (count < n) {
             let row = Math.floor(Math.random() * 9);
