@@ -11,7 +11,6 @@ const MainMenu = () => {
         navigate('/game', {state: { difficulty: e , no: Math.floor(Math.random() * 4) + 1}});
     }
     return (
-        
         <div className="main-menu" style={{display: isShown}}>
             <button className="button" role="button" onClick={() => handleClick(1)}>Easy</button>
             <button className="button" role="button" onClick={() => handleClick(2)}>Medium</button>
